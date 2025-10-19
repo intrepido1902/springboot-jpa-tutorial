@@ -1,31 +1,43 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/java
+// Devcontainer para los tutoriales
+// - sobre el formato de archivo: https://aka.ms/devcontainer.json
+// - sobre las opciones para Java: https://github.com/devcontainers/templates/tree/main/src/java
 {
 	"name": "Java",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+
+	// usa Ubuntu 22 como base
 	"image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
 
+	// instala características de Java y Docker
 	"features": {
 		"ghcr.io/devcontainers/features/java:1": {
-			"version": "25",
-			"jdkDistro": "tem"
+			"version": "latest",
+			"jdkDistro": "ms",
+			"installGradle": false,
+			"installMaven": true,
+			"mavenVersion": "latest"
 		},
-		"ghcr.io/devcontainers-contrib/features/maven-sdkman:2": {},
-		"ghcr.io/devcontainers-contrib/features/springboot-sdkman:2": {}
+		"ghcr.io/devcontainers-extra/features/springboot-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "none"
+		},
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
 	},
 
-	// Configure tool-specific properties.
+	// Personalizaciones
 	"customizations": {
-		// Configure properties specific to VS Code.
+
+		// para VS Code
 		"vscode": {
-			// Set *default* container specific settings.json values on container create.
+			// valores para settings.json por defecto
 			"settings": { 
 			},
 			
-			// Add the IDs of extensions you want installed when the container is created.
+			// extensiones a agregar
 			"extensions": [
-				"vscjava.vscode-java-pack",
-				"Pivotal.vscode-boot-dev-pack"
+				"vscjava.vscode-java-pack",				// Java Extension Pack
+				"vmware.vscode-boot-dev-pack",			// Spring Boot Extension Pack
+				"ms-azuretools.vscode-containers",		// Container Tools
+				"github.copilot-chat"					// GitHub Copilot Chat
 			]
 		}
 	}
@@ -42,5 +54,3 @@
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
 }
-
-
