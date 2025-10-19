@@ -5,7 +5,7 @@
 	"name": "Java",
 
 	// usa Ubuntu 22 como base
-	"image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+	"image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
 
 	// instala características de Java y Docker
 	"features": {
@@ -42,15 +42,12 @@
 		}
 	}
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// lista de puertos dentro del contenedor que se deben hacer disponibles localmente.
 	// "forwardPorts": [],
 
-	// Use 'postCreateCommand' to run commands after the container is created.
+	// comandos a ejecutar después de crear el contenedor.
 	// "postCreateCommand": "java -version",
 
-	// Configure tool-specific properties.
-	// "customizations": {},
-
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// Usar para ejecutar el contenedor como un usuario root, ver: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
 }
